@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 const sendGrid = require('@sendgrid/mail');
-const port = process.env.port || 3030;
+const port = process.env.PORT || 3030;
 const key = process.env.API_KEY;
 app.use(bodyParser.json());
 app.use(cors());
