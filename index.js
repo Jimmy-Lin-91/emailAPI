@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const sendGrid = require('@sendgrid/mail');
 const port = process.env.port || 3030;
+const key = process.env.API_KEY;
 app.use(bodyParser.json());
 app.use(cors());
 app.use((req, res, next) => {
@@ -16,7 +17,7 @@ app.get('/', (req, res, next) => {
   res.send('Api is running!');
 });
 app.post('/email', (req, res, next) => {
-  sendGrid.setApiKey(process.env.key);
+  sendGrid.setApiKey(key);
   const msg = {
     to: 'jimmy.lin0402@gmail.com',
     from: 'jimmy.lin0402@gmail.com',
