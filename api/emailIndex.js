@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const apiKey = require('../config.json');
+const apiKey = require('./config.json');
 const app = express();
 const cors = require('cors');
 const sendGrid = require('@sendgrid/mail');
