@@ -12,10 +12,10 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
-app.get('/api', (req, res, next) => {
+app.get('/', (req, res, next) => {
   res.send('Api is running!');
 });
-app.post('/api/email', (req, res, next) => {
+app.post('/email', (req, res, next) => {
   sendGrid.setApiKey(process.env.key);
   const msg = {
     to: 'jimmy.lin0402@gmail.com',
